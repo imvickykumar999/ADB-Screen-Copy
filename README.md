@@ -1,4 +1,8 @@
 
 ## >>> `Set Environment` *for* `ADB command`
 
-[![ss](https://github.com/imvickykumar999/Biometric-PAM-Auth/blob/main/Automate%20Android/static/Set%20ADB%20Environment.png?raw=true)](https://www.youtube.com/shorts/Tri_bp0lRlQ)
+------------
+
+- `Output Video on` [`Youtube`](https://www.youtube.com/shorts/Tri_bp0lRlQ)
+
+> ![ss](https://github.com/imvickykumar999/ADB-Automate-Android-Phone/blob/main/static/Set%20ADB%20Environment.png?raw=true)
