@@ -21,7 +21,11 @@ while True:
     text = input('>>> ').split()
 
     for i in text:
-        os.system(f'''adb shell input text "{i}"''')
-        os.system(f"adb shell input keyevent 62")
+        if i == '*':
+            os.system("adb shell input keyevent 17")
+        else:
+            os.system(f'''adb shell input text "{i}"''')
+        os.system("adb shell input keyevent 62")
 
-    os.system(f"adb shell input keyevent 66")
+    input('Press Enter')
+    os.system("adb shell input keyevent 66")
