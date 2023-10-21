@@ -2,7 +2,7 @@
 # https://gist.github.com/arjunv/2bbcca9a1a1c127749f8dcb6d36fb0bc
 # https://itnext.io/how-you-can-control-your-android-device-with-python-45c3ab15e260
 
-# pip install pure-python-adb
+# pip install pure-python-adb -U
 
 from ppadb.client import Client as AdbClient
 import time, json, os
@@ -86,7 +86,7 @@ if __name__ == '__main__':
 
 
 '''
-python connect.py
+python main.py
 
 Connected to <ppadb.device.Device object at 0x000001CEAD579F40>
 Taken a photo!

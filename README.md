@@ -27,4 +27,8 @@ Keyevents USB connected Mobile
 
 ## >>> `Set Environment` *for* `ADB command`
 
+`C:\Users\Vicky\Desktop\Repository\ADB-Automate-Android-Phone\ADB\`
+
+<br>
+
 > ![ss](https://github.com/imvickykumar999/ADB-Automate-Android-Phone/blob/main/static/Set%20ADB%20Environment.png?raw=true)

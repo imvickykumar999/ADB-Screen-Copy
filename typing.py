@@ -1,7 +1,12 @@
 
-# OUTPUT : 
-# https://youtube.com/shorts/Tri_bp0lRlQ?feature=share
-# https://youtu.be/uHvtl3Ky0aw
+'''
+USB DEBUG:
+https://stackoverflow.com/a/35642973/11493297
+
+OUTPUT : 
+https://youtube.com/shorts/Tri_bp0lRlQ
+https://youtube.com/shorts/uHvtl3Ky0aw
+'''
 
 import os, json
 
@@ -24,7 +29,7 @@ def keyevent():
 def typing():
     inp = 26 # to power off mobile
     while inp:
-        inp = input('Enter a Sentence : ')
+        inp = input('>>> ')
         if inp == '*':
             break
         for i in inp:
