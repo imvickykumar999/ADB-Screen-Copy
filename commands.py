@@ -1,13 +1,24 @@
 
 '''
 USB DEBUG:
----------
+----------
 
-USB Troubleshoot: https://stackoverflow.com/a/35642973/11493297
-Typing over Wifi: https://stackoverflow.com/a/42364486/11493297
+USB Troubleshoot: 
+https://stackoverflow.com/a/35642973/11493297
 
-Exception : ADB Shell commands:
-------------------------------
+
+Typing over Wifi: 
+https://stackoverflow.com/a/42364486/11493297
+
+>>> adb devices
+>>> adb tcpip 5555
+>>> adb shell "ip addr show wlan0 | grep -e wlan0$ | cut -d\" \" -f 6 | cut -d/ -f 1"
+>>> adb connect <ip-address>:5555
+>>> adb shell input text connected
+
+Exception : 
+ADB Shell commands:
+-------------------
 
 adb shell input text '\'
 \
@@ -19,7 +30,7 @@ adb shell input text "\'"
 '
 
 OUTPUT:
------- 
+-------
 https://youtube.com/shorts/Tri_bp0lRlQ
 https://youtube.com/shorts/uHvtl3Ky0aw
 '''
