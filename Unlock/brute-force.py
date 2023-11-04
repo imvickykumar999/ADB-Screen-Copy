@@ -2,7 +2,7 @@
 import os, math, time
 
 os.system('adb shell input keyevent 26') # Turn ON screen
-# os.system('adb shell input touchscreen swipe 200 500 200 0') # x1,y1, x2,y2
+os.system('adb shell input swipe 200 500 200 0') # x1,y1, x2,y2
 
 n = 10000
 digits = int(math.log10(n))
