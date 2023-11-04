@@ -32,6 +32,8 @@ adb shell input text '\"'
 adb shell input text "\'"
 '
 
+adb disconnect
+
 OUTPUT:
 -------
 https://youtube.com/shorts/Tri_bp0lRlQ
