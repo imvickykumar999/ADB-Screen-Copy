@@ -23,26 +23,8 @@ for i in range(n):
 # for i in range(n): 
 #     click(x = 360, y = 140, mess = 'redo')
 
-# row 1st ...
-click(108, 350) # 1st icon
-click(275, 350) # 2nd icon
-click(444, 350) # 3rd icon
-click(610, 350) # 4th icon
+click(x = 40, y = 1270, mess = 'toggle')
 
-# row 2nd ...
-click(108, 600) # 5th icon
-click(275, 600) # 2nd icon
-click(444, 600) # 3rd icon
-click(610, 600) # 1st icon
-
-# row 3rd ...
-click(108, 851) # 5th icon
-click(275, 851) # 2nd icon
-click(444, 851) # 3rd icon
-click(610, 851) # 1st icon
-
-# row 4th ...
-click(108, 1100) # 5th icon
-click(275, 1100) # 2nd icon
-click(444, 1100) # 3rd icon
-click(610, 1100) # 1st icon
+for y in range(350, 1101, 250):
+    for x in range(107, 612, 168):
+        click(x, y)
