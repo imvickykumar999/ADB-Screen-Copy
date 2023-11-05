@@ -12,7 +12,6 @@ def click(x, y, mess = 'click'):
     print(f'({mess}) : x, y : {x}, {y}')
     os.system(f'adb shell input tap {x} {y}')
 
-
 n = 16
 # unlock() # passed default passcode
 click(x = 40, y = 1270, mess = 'toggle')
