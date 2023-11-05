@@ -9,10 +9,10 @@ digits = int(math.log10(n))
 
 # lst = range(n) # May cause Timeout error or Factory Reset
 lst = [
-    6783, 
-    7926, 
-    4982, 
-    9567, 
+    # 6783, 
+    # 7926, 
+    # 4982, 
+    # 9567, 
     2589
 ] # Playing Safe
 

@@ -2,7 +2,7 @@
 import os, time, sys
 
 def unlock(code = 2589):
-    print('Unlocking Device ...')
+    print('\nUnlocking Device ...')
     time.sleep(2)
     
     os.system('adb shell input keyevent 26')
@@ -47,6 +47,9 @@ for j, y in enumerate(range(350, 1351, 250)):
         if a == i+1 and b == j+1:
             print(f'>>> adb shell input tap {x} {y}')
             click(x, y)
+
+if a == 1 and b == 1:
+    os.system('adb shell input swipe 500 1000 0 1000') # swipe left
 
 
 # App Opener ...
