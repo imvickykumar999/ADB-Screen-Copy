@@ -1,6 +1,16 @@
 # `Output Videos`
 
-> https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/17743c74-9428-4ad5-a8b3-dfd3c463202f
+```python
+def click(x, y, mess = 'click'):
+    print(f'({mess}) : x, y : {x}, {y}')
+    os.system(f'adb shell input tap {x} {y}')
+
+for y in range(350, 1101, 250):
+    for x in range(107, 612, 168):
+        click(x, y)
+```
+
+> https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/97054053-f7cb-4cb9-b915-4186f4da8912
 >
 > https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/13d98789-21ab-4c3e-961f-ee76d433e33b
 >
