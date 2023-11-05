@@ -15,10 +15,10 @@ def click(x, y, mess = 'click'):
 
 n = 16
 # unlock() # passed default passcode
-# click(x = 40, y = 1270, mess = 'toggle')
+click(x = 40, y = 1270, mess = 'toggle')
 
-# for i in range(n): 
-#     click(x = 250, y = 140, mess = 'undo')
+for i in range(n): 
+    click(x = 250, y = 140, mess = 'undo')
 
 # for i in range(n): 
 #     click(x = 360, y = 140, mess = 'redo')
