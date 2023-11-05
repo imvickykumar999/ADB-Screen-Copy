@@ -10,7 +10,11 @@ for y in range(350, 1101, 250):
         click(x, y)
 ```
 
+<br>
+
 > https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/97054053-f7cb-4cb9-b915-4186f4da8912
+>
+> ![app-opener](https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/36edb589-5da2-4e47-9ca4-eedebe9e896c)
 >
 > https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/13d98789-21ab-4c3e-961f-ee76d433e33b
 >
