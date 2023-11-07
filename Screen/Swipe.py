@@ -1,5 +1,7 @@
 
-import os, time
+# https://www.instagram.com/p/CzWezAytRPe/
+
+import os
 from pynput import keyboard
 from pynput.keyboard import Key
 
@@ -14,28 +16,32 @@ print(f'''
 >>> {out}
 >>> Menu:
 
-    Up Key    : Next
-    Down Key  : Previous
-    Left Key  : Like
-    Right Key : Dislike
+    Up Key    : Next     Reel
+    Down Key  : Previous Reel
+    Left Key  : Like     Reel
+    Right Key : Un/Mute  Reel
 ''')
 
 def on_key_release(key):
     global x1, y1, x2, y2, cmd
 
     if key == Key.up:
+        print('Up Key detected.')
         cmd = f'adb shell input swipe {x1} {y1} {x2} {y2}'
         os.system(cmd)
 
     elif key == Key.down:
+        print('Down Key detected.')
         cmd = f'adb shell input swipe {x2} {y2} {x1} {y1}'
         os.system(cmd)
 
     elif key == Key.left:
+        print('Left Key detected.')
         os.system(f'adb shell input tap {x3} {y3}')
         os.system(f'adb shell input tap {x3} {y3}')
 
     elif key == Key.right:
+        print('Right Key detected.')
         os.system(f'adb shell input tap {x3} {y3}')
 
     elif key == Key.esc:
