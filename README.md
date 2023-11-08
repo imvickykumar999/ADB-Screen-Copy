@@ -1,8 +1,20 @@
-> # `Swipe Reels`
->
-> https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/5c993b88-ad5a-4fcd-8d41-32c9c7a96103
+# `Like & Swipe Reels`
+
+```python
+if key == Key.up:
+    print('Swipe Up.')
+    os.system(f'adb shell input swipe {x1} {y1} {x2} {y2}')
+
+elif key == Key.left:
+    print('Reel liked.')
+    os.system(f'adb shell "input tap {x3} {y3}; input tap {x3} {y3}"')
+```
 
 <br>
+
+https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/5c993b88-ad5a-4fcd-8d41-32c9c7a96103
+
+<!--
 
 ```python
 def click(x, y, mess = 'click'):
@@ -16,8 +28,9 @@ for y in range(350, 1101, 250):
 
 <br>
 
-> https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/97054053-f7cb-4cb9-b915-4186f4da8912
->
+https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/97054053-f7cb-4cb9-b915-4186f4da8912
+
+
 > ![app-opener](https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/36edb589-5da2-4e47-9ca4-eedebe9e896c)
 >
 > https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/13d98789-21ab-4c3e-961f-ee76d433e33b
@@ -30,7 +43,6 @@ for y in range(350, 1101, 250):
 
 
 
-<!--
 > ![image](https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/7ac22a89-014a-400f-9fb4-34c1ab14dd40)
 
 <br>
