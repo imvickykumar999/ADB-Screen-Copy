@@ -37,8 +37,7 @@ def on_key_release(key):
 
     elif key == Key.left:
         print('Left Key detected.')
-        os.system(f'adb shell input tap {x3} {y3}')
-        os.system(f'adb shell input tap {x3} {y3}')
+        os.system(f'adb shell "input tap {x3} {y3}; input tap {x3} {y3}"')
 
     elif key == Key.right:
         print('Right Key detected.')
