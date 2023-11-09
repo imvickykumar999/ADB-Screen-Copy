@@ -37,5 +37,9 @@
 
 # Screen Copy (scrcpy)
 
+    >>> adb devices
+    >>> adb connect 192.168.0.103:5555
+
     >>> scrcpy
     >>> scrcpy -r recording.mp4
+    >>> adb disconnect
