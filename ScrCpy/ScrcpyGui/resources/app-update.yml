@@ -1,0 +1,4 @@
+owner: Tomotoes
+repo: scrcpy-gui
+provider: github
+updaterCacheDirName: scrcpy-gui-updater
