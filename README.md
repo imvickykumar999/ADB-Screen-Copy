@@ -2,7 +2,11 @@
 # `Quick Connect`
 
 ```bash
-scrcpy --tcpip=192.168.0.103 -r "screen recording.mp4"
+# ... to screen record connected device
+>>> scrcpy --tcpip=192.168.0.103 -r "screen recording.mp4"
+
+# ... to press power key
+>>> adb -s 192.168.0.103 shell input keyevent 26
 ```
 
 <br>
