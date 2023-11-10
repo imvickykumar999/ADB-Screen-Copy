@@ -5,7 +5,9 @@
 scrcpy --tcpip=192.168.0.103 -r "screen recording.mp4"
 ```
 
-------------------
+<br>
+
+![Environment Variable](https://github.com/imvickykumar999/ADB-Screen-Copy/assets/50515418/c182b47f-30ba-418f-ac6b-b708422d7303)
 
 <br>
 
