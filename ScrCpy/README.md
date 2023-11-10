@@ -22,7 +22,7 @@
     >>> scrcpy --tcpip=192.168.0.103
 
     # Run in Folder address bar to Power ON / OFF
-    >>> adb shell input keyevent 26
+    >>> adb -s 192.168.0.103 shell input keyevent 26
     >>> scrcpy -r recording.mp4
 
     >>> adb disconnect 192.168.0.103
