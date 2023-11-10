@@ -1,5 +1,5 @@
 
-# `Quick Connect`
+# `Quick Start`
 
 ```bash
 # ... to screen record connected device
