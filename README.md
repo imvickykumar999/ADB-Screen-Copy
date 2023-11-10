@@ -1,57 +1,64 @@
-# `Like & Swipe Reels`
 
-```python
-if key == Key.up:
-    print('Swipe Up.')
-    os.system(f'adb shell input swipe {x1} {y1} {x2} {y2}')
+# `Quick Connect`
 
-elif key == Key.left:
-    print('Reel liked.')
-    os.system(f'adb shell "input tap {x3} {y3}; input tap {x3} {y3}"')
+```bash
+scrcpy --tcpip=192.168.0.103 -r "screen recording.mp4"
+```
+
+------------------
+
+<br>
+
+## `One Time Connect (TCP / IP)`
+
+```bash
+>>> adb devices
+    * daemon not running; starting now at tcp:5037
+    * daemon started successfully
+    List of devices attached
+
+>>> adb tcpip 5555
+    restarting in TCP mode port: 5555
+
+>>> adb devices
+    List of devices attached
+    RZ8N60JN0EE     device
+
+>>> adb shell "ip addr show wlan0 | grep -e wlan0$ | cut -d\" \" -f 6 | cut -d/ -f 1"
+    192.168.0.103
+
+>>> adb connect 192.168.0.103:5555
+    connected to 192.168.0.103:5555
 ```
 
 <br>
 
-https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/5c993b88-ad5a-4fcd-8d41-32c9c7a96103
+## `Remove USB (testing)`
 
-<!--
+```bash
+>>> adb shell input keyevent 26
 
-```python
-def click(x, y, mess = 'click'):
-    print(f'({mess}) : x, y : {x}, {y}')
-    os.system(f'adb shell input tap {x} {y}')
+>>> adb shell input keyevent 17
+>>> adb shell input text hello
 
-for y in range(350, 1101, 250):
-    for x in range(107, 612, 168):
-        click(x, y)
+>>> adb disconnect
 ```
 
 <br>
 
-https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/97054053-f7cb-4cb9-b915-4186f4da8912
+## `Screen Copy (scrcpy)`
 
+```bash
+>>> adb devices -l
+>>> adb connect 192.168.0.103
 
-> ![app-opener](https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/36edb589-5da2-4e47-9ca4-eedebe9e896c)
->
-> https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/13d98789-21ab-4c3e-961f-ee76d433e33b
->
-> https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/099ccb4c-4f55-40f8-a132-d69f42f5b934
->
-> https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/1f5dcb66-b6d4-488f-8a6a-b62352a9d388
->
-> https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/ff81393b-7c6d-47a9-aeeb-4958b02cb9c0
+>>> scrcpy
+>>> scrcpy --tcpip=192.168.0.103
 
+# Run in Folder address bar to Power ON / OFF
+>>> adb shell input keyevent 26
+>>> scrcpy -r recording.mp4
 
-
-> ![image](https://github.com/imvickykumar999/ADB-Automate-Android-Phone/assets/50515418/7ac22a89-014a-400f-9fb4-34c1ab14dd40)
-
-<br>
-
-## >>> `Set Environment` *for* `ADB command`
-
-`C:\Users\Vicky\Desktop\Repository\ADB-Automate-Android-Phone\ADB\`
-
-<br>
-
-> ![ss](https://github.com/imvickykumar999/ADB-Automate-Android-Phone/blob/main/static/Set%20ADB%20Environment.png?raw=true)
--->
+>>> adb disconnect 192.168.0.103
+>>> adb disconnect
+```
