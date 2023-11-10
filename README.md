@@ -35,6 +35,10 @@
 
 >>> adb connect 192.168.0.103:5555
     connected to 192.168.0.103:5555
+
+>>> adb pair 192.168.0.103:40535
+    Enter pairing code: 230630
+    Successfully paired to 192.168.0.103:40535 [guid=adb-RZ8N60JN0EE-DzkZ1Q]
 ```
 
 <br>
