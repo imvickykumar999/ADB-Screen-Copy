@@ -1,0 +1,29 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><style lang="en" type="text/css" id="dark-mode-native-sheet"></style><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style data-merge-styles="true"></style>
+  <title>Index of /{{path}}</title>
+ </head>
+
+ <body data-new-gr-c-s-check-loaded="14.1134.0" data-gr-ext-installed="">
+  <h1>Index of /{{path}}</h1>
+
+  <table id="myTable">
+    <tbody>
+      <tr><th onclick="sortTable(0)" valign="top"><img src="./static/blank.gif" alt="[ICO]"></th><th onclick="sortTable(1)">Name</th><th onclick="sortTable(2)">Last modified</th><th onclick="sortTable(3)">Size</th><th onclick="sortTable(4)">Description</th></tr>
+      <tr><th colspan="5"><hr></th></tr>
+      <tr><td valign="top"><img src="./static/back.gif" alt="[PARENTDIR]"></td><td><a href="./">Parent Directory</a> </td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+      
+      {% for i, t, s in files %}
+        <tr><td valign="top"><img src="./static/movie.gif" alt="[VID]"></td><td><a target="_blank" href="./ScreenRecord/{{i}}">{{i}}</a> </td><td align="right"> {{t}} </td><td align="right"> {{s}} MB </td><td>&nbsp;</td></tr>
+      {% endfor %}
+
+      <tr><th colspan="5"><hr></th></tr>
+    </tbody>
+  </table>
+
+<!--
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table_desc
+-->
+
+</body>
+</html>
