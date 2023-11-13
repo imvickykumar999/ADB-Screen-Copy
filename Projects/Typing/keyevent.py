@@ -1,10 +1,13 @@
 
 import os, threading
 
+print('\nPress CTRL+PAUSE/BREAK to exit.\n')
+
 def task1():
     print("Task 1 assigned to thread: {}".format(threading.current_thread().name))
     print("ID of process running task 1: {}".format(os.getpid()))
 
+    print()
     while True:
         x = input('>>> ')
         os.system(f'adb shell input keyevent {x}')
@@ -13,6 +16,7 @@ def task2():
     print("Task 2 assigned to thread: {}".format(threading.current_thread().name))
     print("ID of process running task 2: {}".format(os.getpid()))
 
+    print('\n>>>')
     while True:
         os.system('scrcpy --tcpip=192.168.0.103')
   
