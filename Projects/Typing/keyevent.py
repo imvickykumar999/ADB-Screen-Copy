@@ -9,6 +9,7 @@ Press `CTRL + PAUSE/BREAK` keys to exit.
 (Press ENTER for default IP 192.168.0.103)
 Paste IP Address of Device : ''')
 
+
 def task1():
     global ip
     print()
@@ -22,6 +23,7 @@ def task1():
     while True:
         print()
         os.system(f'scrcpy --tcpip={ip}')
+
 
 def task2():
     print()
@@ -38,21 +40,34 @@ def task2():
     def voldown(*args):
         os.system(f'adb -s {ip} shell input keyevent 25')
 
+    def submit(x):  
+        os.system(f'adb -s {ip} shell input keyevent {x}')
+
     while True:
         root = Tk()
-        root.geometry("500x500")
+        
+        root.geometry("400x600")
         root.title("ScrCpy GUI")
+
         root.config(bg="gray")
+        event = StringVar()
 
-        btn1 = Button(root, bg='red', text="Power ON / OFF", command=power)
-        btn1.place(relx=0.5, rely=0.3, anchor='center')
+        btn1 = Entry(root, textvariable = event, font=('calibre',10,'normal'))
+        btn1.place(relx=0.5, rely=0.1, anchor='center')
 
-        btn2 = Button(root, text="Volume Up", command=volup)
-        btn2.place(relx=0.5, rely=0.5, anchor='center')
+        btn2 = Button(root, bg='green', text = 'Keyevent', command=lambda: submit(event.get()))
+        btn2.place(relx=0.5, rely=0.3, anchor='center')
 
-        btn3 = Button(root, text="Volume Down", command=voldown)
-        btn3.place(relx=0.5, rely=0.7, anchor='center')
+        btn3 = Button(root, text="Volume Up", command=volup)
+        btn3.place(relx=0.5, rely=0.5, anchor='center')
+
+        btn4 = Button(root, text="Volume Down", command=voldown)
+        btn4.place(relx=0.5, rely=0.7, anchor='center')
+        
+        btn5 = Button(root, bg='red', text="Power ON / OFF", command=power)
+        btn5.place(relx=0.5, rely=0.9, anchor='center')
         root.mainloop()
+
 
 if __name__ == "__main__":
     os.system('color 2')
