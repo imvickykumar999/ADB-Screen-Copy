@@ -1,5 +1,9 @@
 
-# `Quick Start`
+> # `Quick Start`
+>
+> ![ScrCpyGUI](https://github.com/imvickykumar999/ADB-Screen-Copy/assets/50515418/402698eb-c03e-42e7-ad67-025b3d4d594c)
+
+<br>
 
 ```bash
 # ... to screen record connected device
