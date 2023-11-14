@@ -1,13 +1,11 @@
 
-import os
-import threading
+import os, threading
 
 ip = input('''
 Press `CTRL + PAUSE/BREAK` keys to exit.
 
-    Volume Up   : >>> 24
-    Volume Down : >>> 25
-    Power       : >>> 26
+    Volume : >>> 24
+    Power  : >>> 26
 
 (Press ENTER for default IP 192.168.0.103)
 Paste IP Address of Device : ''')
@@ -34,8 +32,10 @@ def task2():
 
     while True:
         x = input('>>> ')
-        if x == '':
+        if x in ['', '26']:
             x = 26
+        else:
+            x = 24
         os.system(f'adb shell input keyevent {x}')
 
 
