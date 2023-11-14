@@ -1,7 +1,7 @@
 
 > # `Quick Start`
 >
-> ![image](https://github.com/imvickykumar999/ADB-Screen-Copy/assets/50515418/d2d15182-9b0c-42d7-b599-0e88a28a3b22)
+> ![image](https://github.com/imvickykumar999/ADB-Screen-Copy/assets/50515418/ac6d6c96-c9b4-4045-b45a-77a359129ffd)
 
 <br>
 
