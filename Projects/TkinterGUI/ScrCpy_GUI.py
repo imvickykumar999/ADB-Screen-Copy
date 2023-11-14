@@ -69,6 +69,10 @@ def task2():
             rely4 = 0.8
             rely5 = 0.9
 
+            bg = PhotoImage(file = "wallpaper.png") 
+            label = Label( root, image = bg) 
+            label.place(x = 0, y = 0) 
+
             num_list = Listbox(root, height=15, width=30)
             with open('keyevents.json') as f:
                 data = json.load(f)
