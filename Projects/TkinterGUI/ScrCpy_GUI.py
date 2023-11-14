@@ -44,6 +44,15 @@ def task2():
     def voldown():
         os.system(f'adb -s {ip} shell input keyevent 25')
 
+    def submit(x):
+        try: 
+            if x == '': 
+                os.system('keyevents.json')
+            else:
+                os.system(f'adb -s {ip} shell input keyevent {x}')
+        except Exception as e: 
+            print(e)
+
     def fun():
         key = num_list.get(num_list.curselection()[0])
         key = key.split(' : ')[0]
@@ -55,27 +64,46 @@ def task2():
         root.title("ScrCpy GUI")
         root.config(bg="gray")
 
-        num_list = Listbox(root, height=15, width=30)
-        with open('keyevents.json') as f:
-            data = json.load(f)
+        try:
+            rely3 = 0.7
+            rely4 = 0.8
+            rely5 = 0.9
 
-        for i in data['key_events']:
-            j = data['key_events'][i]
-            k = j.split('adb shell input keyevent ')
-            num_list.insert(k[1], f'{k[1]} : {i.split("key_")[1]}')
+            num_list = Listbox(root, height=15, width=30)
+            with open('keyevents.json') as f:
+                data = json.load(f)
 
-        num_list.place(relx=0.5, rely=0.4, anchor='center')
-        get_num_btn = Button(root, bg='green', text="Run ADB", command=fun)
-        get_num_btn.place(relx=0.5, rely=0.1, anchor='center')
+            for i in data['key_events']:
+                j = data['key_events'][i]
+                k = j.split('adb shell input keyevent ')
+                num_list.insert(k[1], f'{k[1]} : {i.split("key_")[1]}')
 
-        VolumeUp = Button(root, text="Volume Up", command=volup)
-        VolumeUp.place(relx=0.5, rely=0.7, anchor='center')
+            num_list.place(relx=0.5, rely=0.4, anchor='center')
+            get_num_btn = Button(root, bg='green', text="Run ADB", command=fun)
+            get_num_btn.place(relx=0.5, rely=0.1, anchor='center')
 
-        VolumeDown = Button(root, text="Volume Down", command=voldown)
-        VolumeDown.place(relx=0.5, rely=0.8, anchor='center')
+        except:
+            rely3 = 0.5
+            rely4 = 0.6
+            rely5 = 0.8
+
+            event = StringVar()
+            btn1 = Entry(root, textvariable = event)
+
+            btn1.insert(0, '209') # Open Music App
+            btn1.place(relx=0.5, rely=0.1, anchor='center')
+
+            btn2 = Button(root, bg='green', text = 'Keyevent', command=lambda: submit(event.get()))
+            btn2.place(relx=0.5, rely=0.2, anchor='center')
+
+        btn3 = Button(root, text="Volume Up", command=volup)
+        btn3.place(relx=0.5, rely=rely3, anchor='center')
+
+        btn4 = Button(root, text="Volume Down", command=voldown)
+        btn4.place(relx=0.5, rely=rely4, anchor='center')
         
-        Power = Button(root, bg='red', text="Power ON / OFF", command=power)
-        Power.place(relx=0.5, rely=0.9, anchor='center')
+        btn5 = Button(root, bg='red', text="Power ON / OFF", command=power)
+        btn5.place(relx=0.5, rely=rely5, anchor='center')
         root.mainloop()
 
 
