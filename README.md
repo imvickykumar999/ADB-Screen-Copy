@@ -1,9 +1,21 @@
 
-> # `Quick Start`
->
-> ![image](https://github.com/imvickykumar999/ADB-Screen-Copy/assets/50515418/ac6d6c96-c9b4-4045-b45a-77a359129ffd)
+# `ScrCpy GUI`
+
+https://github.com/imvickykumar999/ADB-Screen-Copy/blob/d8dcceb25600d219055dc03862cf484ee9594df3/Projects/TkinterGUI/ScrCpy_GUI.py#L29
 
 <br>
+
+https://github.com/imvickykumar999/ADB-Screen-Copy/assets/50515418/08951c4e-979f-4dcb-bafb-bc69d60b0081
+
+<br>
+
+## `Set Environment Variable`
+
+![Environment Variable](https://github.com/imvickykumar999/ADB-Screen-Copy/assets/50515418/c182b47f-30ba-418f-ac6b-b708422d7303)
+
+<br>
+
+## `Quick Start`
 
 ```bash
 # ... to screen record connected device
@@ -12,10 +24,6 @@
 # ... to press power key
 >>> adb -s 192.168.0.103 shell input keyevent 26
 ```
-
-<br>
-
-![Environment Variable](https://github.com/imvickykumar999/ADB-Screen-Copy/assets/50515418/c182b47f-30ba-418f-ac6b-b708422d7303)
 
 <br>
 
