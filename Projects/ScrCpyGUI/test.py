@@ -1,35 +1,28 @@
-# Import module 
-from tkinter import *
+import tkinter as tk
+import json
 
-# Create object 
-root = Tk() 
+root = tk.Tk()
+root.geometry("200x300")
 
-# Adjust size 
-root.geometry("400x400") 
+# Create a number list field
+num_list = tk.Listbox(root, height=10, width=20)
 
-# Add image file 
-bg = PhotoImage(file = "wallpaper.png") 
+with open('keyevents.json') as f:
+  data = json.load(f)
 
-# Show image using label 
-label1 = Label( root, image = bg) 
-label1.place(x = 0, y = 0) 
+# Add numbers to the list field
+for i in data['key_events']:
+    j = data['key_events'][i].split('adb shell input keyevent ')[1]
+    print(j, i)
+    num_list.insert(j, i)
 
-label2 = Label( root, text = "Welcome") 
-label2.pack(pady = 50) 
+# Pack the list field
+num_list.pack()
 
-# Create Frame 
-frame1 = Frame(root) 
-frame1.pack(pady = 20 ) 
+# Create a button to get the selected number
+get_num_btn = tk.Button(root, text="Get Number", command=lambda: print(num_list.get(num_list.curselection()[0])))
 
-# Add buttons 
-button1 = Button(frame1,text="Exit") 
-button1.pack(pady=20) 
+# Pack the button
+get_num_btn.pack()
 
-button2 = Button( frame1, text = "Start") 
-button2.pack(pady = 20) 
-
-button3 = Button( frame1, text = "Reset") 
-button3.pack(pady = 20) 
-
-# Execute tkinter 
 root.mainloop()

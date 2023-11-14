@@ -62,7 +62,7 @@ def task2():
         root.config(bg="gray")
         event = StringVar()
 
-        btn1 = Entry(root, textvariable = event, font=('calibre',10,'normal'))
+        btn1 = Entry(root, textvariable = event)
         btn1.insert(0, '209') # Open Music App
         btn1.place(relx=0.5, rely=0.1, anchor='center')
 
