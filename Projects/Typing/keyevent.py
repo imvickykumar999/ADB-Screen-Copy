@@ -6,10 +6,6 @@ from tkinter import *
 ip = input('''
 Press `CTRL + PAUSE/BREAK` keys to exit.
 
-    Volume Up   : >>> 24
-    Volume Down : >>> 25
-    Power       : >>> 26
-
 (Press ENTER for default IP 192.168.0.103)
 Paste IP Address of Device : ''')
 
@@ -33,8 +29,14 @@ def task2():
     print("Task 2 assigned to thread: {}".format(threading.current_thread().name))
     print("ID of process running task 2: {}".format(os.getpid()))
 
-    def controller(*args):
+    def power(*args):
         os.system(f'adb -s {ip} shell input keyevent 26')
+
+    def volup(*args):
+        os.system(f'adb -s {ip} shell input keyevent 24')
+
+    def voldown(*args):
+        os.system(f'adb -s {ip} shell input keyevent 25')
 
     while True:
         root = Tk()
@@ -42,8 +44,14 @@ def task2():
         root.title("ScrCpy GUI")
         root.config(bg="gray")
 
-        btn = Button(root, text="Power ON / OFF", command=controller)
-        btn.place(relx=0.5, rely=0.5, anchor='center')
+        btn1 = Button(root, bg='red', text="Power ON / OFF", command=power)
+        btn1.place(relx=0.5, rely=0.3, anchor='center')
+
+        btn2 = Button(root, text="Volume Up", command=volup)
+        btn2.place(relx=0.5, rely=0.5, anchor='center')
+
+        btn3 = Button(root, text="Volume Down", command=voldown)
+        btn3.place(relx=0.5, rely=0.7, anchor='center')
         root.mainloop()
 
 if __name__ == "__main__":
