@@ -1,6 +1,7 @@
 
 import os
 import threading
+from tkinter import *
 
 ip = input('''
 Press `CTRL + PAUSE/BREAK` keys to exit.
@@ -32,12 +33,18 @@ def task2():
     print("Task 2 assigned to thread: {}".format(threading.current_thread().name))
     print("ID of process running task 2: {}".format(os.getpid()))
 
-    while True:
-        x = input('>>> ')
-        if x == '':
-            x = 26
-        os.system(f'adb shell input keyevent {x}')
+    def controller(*args):
+        os.system(f'adb -s {ip} shell input keyevent 26')
 
+    while True:
+        root = Tk()
+        root.geometry("500x500")
+        root.title("ScrCpy GUI")
+        root.config(bg="gray")
+
+        btn = Button(root, text="Power ON / OFF", command=controller)
+        btn.place(relx=0.5, rely=0.5, anchor='center')
+        root.mainloop()
 
 if __name__ == "__main__":
     os.system('color 2')
