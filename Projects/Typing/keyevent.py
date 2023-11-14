@@ -1,42 +1,56 @@
 
-import os, threading
+import os
+import threading
 
-print('\nPress CTRL+PAUSE/BREAK to exit.\n')
+ip = input('''
+Press `CTRL + PAUSE/BREAK` keys to exit.
+
+    Volume Up   : >>> 24
+    Volume Down : >>> 25
+    Power       : >>> 26
+
+(Press ENTER for default IP 192.168.0.103)
+Paste IP Address of Device : ''')
 
 def task1():
+    global ip
+    print()
+
     print("Task 1 assigned to thread: {}".format(threading.current_thread().name))
     print("ID of process running task 1: {}".format(os.getpid()))
 
-    print()
+    if ip == '':
+        ip = '192.168.0.103'
+
     while True:
-        x = input('>>> ')
-        os.system(f'adb shell input keyevent {x}')
+        print()
+        os.system(f'scrcpy --tcpip={ip}')
 
 def task2():
+    print()
+
     print("Task 2 assigned to thread: {}".format(threading.current_thread().name))
     print("ID of process running task 2: {}".format(os.getpid()))
 
-    print('\n>>>')
     while True:
-        os.system('scrcpy --tcpip=192.168.0.103')
-  
+        x = input('>>> ')
+        if x == '':
+            x = 26
+        os.system(f'adb shell input keyevent {x}')
+
+
 if __name__ == "__main__":
-  
-    # print ID of current process
+    os.system('color 2')
+    print()
+
     print("ID of process running main program: {}".format(os.getpid()))
-  
-    # print name of main thread
     print("Main thread name: {}".format(threading.current_thread().name))
-  
-    # creating threads
+
     t1 = threading.Thread(target=task1, name='t1')
     t2 = threading.Thread(target=task2, name='t2')  
   
-    # starting threads
     t1.start()
     t2.start()
   
-    # wait until all threads finish
     t1.join()
     t2.join()
-
