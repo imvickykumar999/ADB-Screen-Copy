@@ -1,6 +1,6 @@
 
 # https://github.com/Andereoo/TkinterWeb/issues/89#issue-1994361750
-# pip install tkinterweb
+# pip install tkinterweb -U
 
 from tkinterweb import HtmlFrame #import the HTML browser
 try:
