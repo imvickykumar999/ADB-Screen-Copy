@@ -2,6 +2,9 @@
 # https://github.com/imvickykumar999/ADB-Screen-Copy/releases
 # pyinstaller --onefile ScrCpy_GUI.py
 
+# https://github.com/Andereoo/TkinterWeb/issues/89#issue-1994361750
+# pip install tkinterweb -U
+
 import os, json
 import threading
 from tkinter import *
