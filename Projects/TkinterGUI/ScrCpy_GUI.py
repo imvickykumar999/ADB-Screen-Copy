@@ -1,4 +1,6 @@
 
+# pyinstaller --onefile ScrCpy_GUI.py
+
 import os, json
 import threading
 from tkinter import *
