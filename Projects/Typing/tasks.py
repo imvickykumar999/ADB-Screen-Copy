@@ -16,7 +16,7 @@ def connect():
         quit()
 
     device = devices[0]
-    print(f'Connected to {device}')
+    print(f'Connected to {device.serial}')
     return device, client
 
 device, client = connect()

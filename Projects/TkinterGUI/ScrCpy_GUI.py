@@ -29,7 +29,7 @@ def task1():
     print("ID of process running task 1: {}".format(os.getpid()))
 
     if ip == '':
-        ip = '192.168.0.103'
+        ip = '192.168.0.102'
 
     while True:
         print()
