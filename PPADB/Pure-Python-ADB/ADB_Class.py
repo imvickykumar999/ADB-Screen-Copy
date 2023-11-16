@@ -1,70 +1,63 @@
 
 # https://github.com/Swind/pure-python-adb#examples
-
-def get_version():
-    from ppadb.client import Client as AdbClient
-    # Default is "127.0.0.1" and 5037
-
-    client = AdbClient(host="127.0.0.1", port=5037)
-    print(client.version())
-    # client.remote_disconnect()
+# Default serial is "127.0.0.1" and 5037
 
 
-def connect_device():
-    from ppadb.client import Client as AdbClient
-    # Default is "127.0.0.1" and 5037
-
-    client = AdbClient(host="127.0.0.1", port=5037)
-    device = client.device("192.168.0.103:5555") # edit ip-address
-    print(device)
+import os
+from ppadb.client import Client as AdbClient
 
 
-def install_apk():
-    from ppadb.client import Client as AdbClient
-    apk_path = "static/example.apk"
+class Manuipulate_sdcard():
+    def __init__(self, host, port) -> None:
+        os.system(f'adb connect {host}')
 
-    # Default is "127.0.0.1" and 5037
-    client = AdbClient(host="127.0.0.1", port=5037)
-    devices = client.devices()
-
-    for device in devices:
-        device.install(apk_path)
+        self.client = AdbClient(host="127.0.0.1", port=5037)
+        self.serial = f'{host}:{port}'
+        self.device = self.client.device(self.serial)
 
 
-def shell_echo():
-    from ppadb.client import Client as AdbClient
-    # Default is "127.0.0.1" and 5037
-
-    client = AdbClient(host="127.0.0.1", port=5037)
-    device = client.device("192.168.0.103:5555")
-    device.shell("echo hello world !")
+    def all_devices(self):
+        print([device.serial for device in self.client.devices()])
 
 
-def screenshot():
-    from ppadb.client import Client as AdbClient
-    client = AdbClient(host="127.0.0.1", port=5037)
-
-    device = client.device("192.168.0.103:5555")
-    result = device.screencap()
-
-    with open("static/ppadb.png", "wb") as fp:
-        fp.write(result)
+    def get_version(self):
+        print(self.client.version())
 
 
-def push_file():
-    from ppadb.client import Client as AdbClient
-    client = AdbClient(host="127.0.0.1", port=5037)
-
-    device = client.device("192.168.0.103:5555")
-    # device.push("static/", "/sdcard/Download/Telegram/static/") # push folder
-    device.push("static/example.apk", "/sdcard/Download/Telegram/example.apk")
+    def disconnect(self):
+        self.client.remote_disconnect(self.serial)
 
 
-def pull_file():
-    from ppadb.client import Client as AdbClient
-    client = AdbClient(host="127.0.0.1", port=5037)
-    device = client.device("192.168.0.103:5555")
+    def install_apk(self):
+        apk_path = "static/example.apk"
+        self.device.install(apk_path)
 
-    device.shell("screencap -p /sdcard/Download/Telegram/DARE2COMPETE HACKATHON.pdf")
-    device.pull("/sdcard/Download/Telegram/DARE2COMPETE HACKATHON.pdf", "static/DARE2COMPETE HACKATHON.pdf")
 
+    def shell_echo(self):
+        self.device.shell("echo hello world !")
+
+
+    def screenshot(self):
+        result = self.device.screencap()
+
+        with open("static/ppadb.png", "wb") as fp:
+            fp.write(result)
+
+
+    def push_file(self):
+        # self.device.push("static/", "/sdcard/Download/Telegram/static/") # push folder
+        self.device.push("static/example.apk", "/sdcard/Download/Telegram/example.apk")
+
+
+    def pull_file(self):
+        self.device.shell("screencap -p /sdcard/Download/Telegram/DARE2COMPETE HACKATHON.pdf")
+        self.device.pull("/sdcard/Download/Telegram/DARE2COMPETE HACKATHON.pdf", "static/DARE2COMPETE HACKATHON.pdf")
+
+
+if __name__ == '__main__':
+    host, port = "192.168.0.103", 5555
+    sdcard = Manuipulate_sdcard(host, port)
+
+    # sdcard.get_version()
+    sdcard.screenshot()
+    # sdcard.disconnect()
