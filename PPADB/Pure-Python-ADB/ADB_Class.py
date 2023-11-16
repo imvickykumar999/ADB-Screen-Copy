@@ -28,15 +28,6 @@ class Manuipulate_sdcard():
         self.client.remote_disconnect(self.serial)
 
 
-    def install_apk(self):
-        apk_path = "static/example.apk"
-        self.device.install(apk_path)
-
-
-    def shell_echo(self):
-        self.device.shell("echo hello world !")
-
-
     def screenshot(self):
         result = self.device.screencap()
 
@@ -44,20 +35,31 @@ class Manuipulate_sdcard():
             fp.write(result)
 
 
-    def push_file(self):
-        # self.device.push("static/", "/sdcard/Download/Telegram/static/") # push folder
-        self.device.push("static/example.apk", "/sdcard/Download/Telegram/example.apk")
+    # def install_apk(self):
+    #     apk_path = "static/example.apk"
+    #     self.device.install(apk_path)
 
 
-    def pull_file(self):
-        self.device.shell("screencap -p /sdcard/Download/Telegram/DARE2COMPETE HACKATHON.pdf")
-        self.device.pull("/sdcard/Download/Telegram/DARE2COMPETE HACKATHON.pdf", "static/DARE2COMPETE HACKATHON.pdf")
+    # def shell_echo(self):
+    #     self.device.shell("echo hello world !")
+
+
+    # def push_file(self):
+    #     # self.device.push("static/", "/sdcard/Download/Telegram/static/") # push folder
+    #     self.device.push("static/example.apk", "/sdcard/Download/Telegram/example.apk")
+
+
+    # def pull_file(self):
+    #     self.device.shell("screencap -p /sdcard/Download/Telegram/DARE2COMPETE HACKATHON.pdf")
+    #     self.device.pull("/sdcard/Download/Telegram/DARE2COMPETE HACKATHON.pdf", "static/DARE2COMPETE HACKATHON.pdf")
 
 
 if __name__ == '__main__':
     host, port = "192.168.0.103", 5555
     sdcard = Manuipulate_sdcard(host, port)
 
+    # sdcard.all_devices()
     # sdcard.get_version()
+
     sdcard.screenshot()
     # sdcard.disconnect()
