@@ -1,8 +1,6 @@
 
-# https://github.com/Swind/pure-python-adb#examples
-
+import os, time
 from ppadb.client import Client as AdbClient
-import os
 
 
 class Manuipulate_sdcard():
@@ -31,16 +29,13 @@ class Manuipulate_sdcard():
         print('\nVersion:', self.client.version())
 
 
-    def shell_echo(self):
-        self.device.shell("echo Hello World !")
-
-
     def disconnect(self):
         self.client.remote_disconnect(self.serial)
         print('\nADB Disconnected.')
 
 
     def screenshot(self):
+        time.sleep(1)
         result = self.device.screencap()
 
         with open("static/screenshot.png", "wb") as fp:
@@ -74,21 +69,21 @@ class Manuipulate_sdcard():
 
 
 if __name__ == '__main__':
-    host, port = "192.168.0.103", 5555
+    host, port = "192.168.0.102", 5555
     sdcard = Manuipulate_sdcard(host, port)
 
     sdcard.get_version()
     sdcard.all_devices()
 
-    apk = 'example.apk'
-    sdcard.install_apk(apk)
+    # apk = 'example.apk'
+    # sdcard.install_apk(apk)
 
     path = 'Download/Telegram'
     file = 'screenshot.png'
 
-    sdcard.push_folder(path)
+    # sdcard.push_folder(path)
     sdcard.pull_file(file, path)
-    sdcard.push_file(file, path)
+    # sdcard.push_file(file, path)
 
     sdcard.screenshot()
-    sdcard.disconnect()
+    # sdcard.disconnect()
