@@ -34,11 +34,10 @@ class Manuipulate_sdcard():
         print('\nADB Disconnected.')
 
 
-    def screenshot(self):
-        time.sleep(1)
+    def screenshot(self, ss):
         result = self.device.screencap()
 
-        with open("static/screenshot.png", "wb") as fp:
+        with open(f"static/{ss}", "wb") as fp:
             fp.write(result)
             print('\nScreenshot saved.')
 
@@ -53,19 +52,17 @@ class Manuipulate_sdcard():
 
     def push_folder(self, path='Download/'):
         self.device.push("static/", f"/sdcard/{path}/static/")
-        print(f'\nFolder {path}/static Pushed.')
+        print(f'\nFolder "{path}/static" Pushed.')
 
 
     def push_file(self, file='screenshot.png', path='Download/'):
         self.device.push(f"static/{file}", f"/sdcard/{path}/{file}")
-        print(f'\nFile {path}/{file} Pushed.')
+        print(f'\nFile "{path}/{file}" Pushed.')
 
 
-    def pull_file(self, file='screenshot.png', path='Download/'):
-        self.device.shell(f"screencap -p /sdcard/{path}/{file}")
-        
+    def pull_file(self, file='screenshot.png', path='Download/'):        
         self.device.pull(f"/sdcard/{path}/{file}", f"static/{file}")
-        print(f'\nFile {path}/{file} Pulled.')
+        print(f'\nFile "{path}/{file}" Pulled.')
 
 
 if __name__ == '__main__':
@@ -74,16 +71,20 @@ if __name__ == '__main__':
 
     sdcard.get_version()
     sdcard.all_devices()
-
     # apk = 'example.apk'
     # sdcard.install_apk(apk)
 
-    path = 'Download/Telegram'
-    file = 'screenshot.png'
+    pullpath = 'Movies/Instagram'
+    pullfile = 'reels.mp4'
+    sdcard.pull_file(pullfile, pullpath)
 
-    # sdcard.push_folder(path)
-    sdcard.pull_file(file, path)
-    # sdcard.push_file(file, path)
+    time.sleep(1)
+    pushpath = 'Download/Telegram/static'
+    pushfile = 'reels.mp4'
+    sdcard.push_file(pushfile, pushpath)
+    # sdcard.push_folder(pushpath)
 
-    sdcard.screenshot()
+    time.sleep(1)
+    ss = 'screenshot.png'
+    sdcard.screenshot(ss)
     # sdcard.disconnect()
