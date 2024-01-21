@@ -1,5 +1,11 @@
 
-# One Time Connect (TCP / IP) ...
+# `Download Scrcpy`
+
+from here -> https://github.com/Genymobile/scrcpy/releases/
+
+-------
+
+## One Time Connect (TCP / IP) ...
 
     >>> adb devices
         * daemon not running; starting now at tcp:5037
@@ -13,7 +19,7 @@
     >>> adb connect 192.168.0.103:5555
 
 
-# Screen Copy (scrcpy) ...
+## Screen Copy (scrcpy) ...
 
     >>> adb devices -l
     >>> adb connect 192.168.0.103
