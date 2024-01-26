@@ -19,10 +19,13 @@ https://github.com/imvickykumar999/ADB-Screen-Copy/assets/50515418/08951c4e-979f
 
 ```bash
 # ... to screen record connected device
->>> scrcpy --tcpip=192.168.0.103 -r "screen recording.mp4"
+>>> scrcpy --tcpip=192.168.0.102 -r "screen recording.mp4"
+
+# ... audio forwarding
+>>> scrcpy --tcpip=192.168.0.102 --audio-source=mic
 
 # ... to press power key
->>> adb -s 192.168.0.103 shell input keyevent 26
+>>> adb -s 192.168.0.102 shell input keyevent 26
 ```
 
 <br>
