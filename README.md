@@ -27,6 +27,17 @@ https://github.com/imvickykumar999/ADB-Screen-Copy/assets/50515418/08951c4e-979f
 
 <br>
 
+## `Pairing Code` : [`Wireless debugging`](https://stackoverflow.com/a/73605270/11493297)
+
+```bash
+# Pair device with pairing code
+
+adb pair
+adb.exe: usage: adb pair HOST[:PORT] [PAIRING CODE]
+```
+
+<br>
+
 ## `One Time Connect (TCP / IP)`
 
 ```bash
