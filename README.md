@@ -35,8 +35,8 @@ https://github.com/imvickykumar999/ADB-Screen-Copy/assets/50515418/08951c4e-979f
 ```bash
 # Pair device with pairing code
 
-adb pair
-adb.exe: usage: adb pair HOST[:PORT] [PAIRING CODE]
+>>> adb pair
+   adb.exe: usage: adb pair HOST[:PORT] [PAIRING CODE]
 ```
 
 <br>
@@ -49,8 +49,15 @@ adb.exe: usage: adb pair HOST[:PORT] [PAIRING CODE]
     * daemon started successfully
     List of devices attached
 
+# Connect via USB
+
+>>> adb usb
+    restarting in USB mode
+
 >>> adb tcpip 5555
     restarting in TCP mode port: 5555
+
+# Disconnect USB
 
 >>> adb devices
     List of devices attached
