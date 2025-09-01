@@ -26,6 +26,9 @@ https://github.com/imvickykumar999/ADB-Screen-Copy/assets/50515418/08951c4e-979f
 
 # ... to press power key
 >>> adb -s 192.168.0.102 shell input keyevent 26
+
+# ... to print logs in terminal
+>>> adb -s 192.168.1.3:5555 logcat
 ```
 
 <br>
